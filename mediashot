@@ -1,0 +1,16 @@
+#!/bin/bash
+file="$1"
+path="$2"
+text="$3"
+
+mkdir "$path"
+mediainfo "$file" > "$path"/"$text".mediainfo
+ffmpeg -ss 00:00:05 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".0.1.png
+ffmpeg -ss 00:00:10 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".0.2.png
+ffmpeg -ss 00:00:15 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".0.3.png
+ffmpeg -ss 00:10:00 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".1.png
+ffmpeg -ss 00:20:00 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".2.png
+ffmpeg -ss 00:30:00 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".3.png
+ffmpeg -ss 00:40:00 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".4.png
+ffmpeg -ss 00:50:00 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".5.png
+ffmpeg -ss 01:00:00 -i "$file" -y  -vframes 1 -vf "scale='max(sar,1)*iw':'max(1/sar,1)*ih'" "$path"/"$text".6.png
